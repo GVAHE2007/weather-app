@@ -41,7 +41,8 @@ window.navigator.geolocation.getCurrentPosition(async ({ coords: { latitude, lon
 
 
 function renderWeather(obj) {
-    temp.append(obj.current.temp_c);
+   temp.textContent = obj.current.temp_c;
+  temp.innerHTML += '<span class="wheater__celsius-icon">° C</span>';
     city.textContent = obj.location.name;
     country.textContent = obj.location.country;
     wind.textContent = obj.current.wind_kph + " kmh";
